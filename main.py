@@ -1,7 +1,7 @@
 import customtkinter as ctk 
 from settings.settings import *
 from control_buttons import ControlButtons
-
+from timer import Timer
 
 class App(ctk.CTk):
     def __init__(self):
@@ -31,21 +31,24 @@ class App(ctk.CTk):
             create_lap = self.create_lap            
             )
 
+        # timer log
+        self.timer = Timer()
+
 
     def start(self):
-        print('start')
+        self.timer.start()
 
     def pause(self):
-        print('pause')
+        self.timer.pause()
 
     def resume(self):
-        print('resume')
+        self.timer.resume()
 
     def reset(self):
-        print('reset')
+        self.timer.reset()
 
     def create_lap(self):
-        print('lap')
+        print(self.timer.get_time())
 
 
 
